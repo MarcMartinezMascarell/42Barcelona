@@ -6,7 +6,7 @@
 /*   By: kitus <kitus@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:12:11 by marcmart          #+#    #+#             */
-/*   Updated: 2022/01/18 15:29:22 by kitus            ###   ########.fr       */
+/*   Updated: 2022/01/18 17:13:57 by kitus            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+//BASICAS
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -37,5 +38,10 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *str);
+char	*ft_strdup(const char *s);
+void	*ft_calloc(size_t nmemb, size_t size);
+
+//ADICIONALES
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

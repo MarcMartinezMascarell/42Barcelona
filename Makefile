@@ -1,10 +1,12 @@
-NAME		= libft.a
+NAME		= libft.a 
 
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
-AR			= ar -rcs
-RM			= rm -f
+LIB			= ar -rcs
+LIB1		= ranlib
+RM			= /bin/rm -f
 
+INCS		=	libft.h
 SRCS		=	ft_atoi.c \
 				ft_bzero.c \
 				ft_isalnum.c \
@@ -12,7 +14,6 @@ SRCS		=	ft_atoi.c \
 				ft_isascii.c \
 				ft_isdigit.c \
 				ft_isprint.c \
-				ft_strlen.c \
 				ft_memchr.c \
 				ft_memcmp.c \
 				ft_memcpy.c \
@@ -21,38 +22,41 @@ SRCS		=	ft_atoi.c \
 				ft_strchr.c \
 				ft_strlcat.c \
 				ft_strlcpy.c \
+				ft_strlen.c \
 				ft_strncmp.c \
 				ft_strnstr.c \
 				ft_strrchr.c \
 				ft_tolower.c \
 				ft_toupper.c \
+				ft_calloc.c \
+				ft_strdup.c
+		
+SRCS_BONUS	=	ft_substr.c
 
-SRCS_DIR 	= ./
-SRCS 		= $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
-SRCS_B 		= $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES_B)))
+OBJS		= $(SRCS:.c=.o)
+OBJS_BONUS	= $(SRCS_BONUS:.c=.o)
 
-OBJS_DIR 	= ./
-OBJS 		= $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
-OBJS_B 		= $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
+all: 		$(NAME)
 
+$(NAME):	$(OBJS) $(INCS)
+			$(LIB)	$(NAME) $(OBJS)
+			$(LIB1) $(NAME)
 
-.c.o: $(SRCS)
-	$(CC) $(CFLAGS) -c -o $@ $<
+bonus:		$(NAME) $(OBJS_BONUS)
+			$(LIB) $(NAME) $(OBJS_BONUS)
+			$(LIB1) $(NAME)
 
-$(NAME): $(OBJS)
-	$(AR) $@ $^
+.c.o: 		
+			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
-bonus: $(OBJS_B)
-	$(AR) $(NAME) $^
+clean:		
+			$(RM) $(OBJS) $(OBJS_BONUS)
 
-all: $(NAME)
+fclean:		clean
+			$(RM) $(NAME)
 
-clean:
-	$(RM) $(OBJS) $(OBJS_B)
+re:			fclean all
 
-fclean: clean
-	$(RM) $(NAME)
+rebonus:	fclean bonus
 
-re: clean all
-
-.PHONY: bonus all clean fclean re
+.PHONY:		all clean fclean re bonus rebonus
