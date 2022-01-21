@@ -6,7 +6,7 @@
 /*   By: kitus <kitus@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 13:44:16 by kitus             #+#    #+#             */
-/*   Updated: 2022/01/20 13:49:03 by kitus            ###   ########.fr       */
+/*   Updated: 2022/01/21 13:46:10 by kitus            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ char	*ft_itoa(int n)
 	return (number);
 }
 
-// recursively count integer size
 int	ft_countsize(long int n)
 {
 	if (n < 0)
@@ -40,7 +39,6 @@ int	ft_countsize(long int n)
 		return (1 + ft_countsize(n / 10));
 }
 
-// recursively convert integer to string
 void	ft_convbase(long int n, char *number, long int i)
 {
 	if (n < 0)
