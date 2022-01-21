@@ -6,7 +6,7 @@
 /*   By: kitus <kitus@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:12:11 by marcmart          #+#    #+#             */
-/*   Updated: 2022/01/18 17:13:57 by kitus            ###   ########.fr       */
+/*   Updated: 2022/01/20 13:49:13 by kitus            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,9 @@ void	*ft_calloc(size_t nmemb, size_t size);
 
 //ADICIONALES
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
 
 #endif

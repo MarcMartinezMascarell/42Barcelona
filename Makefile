@@ -31,7 +31,11 @@ SRCS		=	ft_atoi.c \
 				ft_calloc.c \
 				ft_strdup.c
 		
-SRCS_BONUS	=	ft_substr.c
+SRCS_BONUS	=	ft_substr.c \
+				ft_strjoin.c \
+				ft_strtrim.c \
+				ft_split.c \
+				ft_itoa.c
 
 OBJS		= $(SRCS:.c=.o)
 OBJS_BONUS	= $(SRCS_BONUS:.c=.o)
