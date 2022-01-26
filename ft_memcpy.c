@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kitus <kitus@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marcmart <marcmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 15:45:35 by marcmart          #+#    #+#             */
-/*   Updated: 2022/01/18 14:55:29 by kitus            ###   ########.fr       */
+/*   Updated: 2022/01/24 16:50:59 by marcmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*string2;
 
 	i = 0;
-	if (dst == NULL || src == NULL)
+	if (dst == NULL && src == NULL)
 		return (NULL);
 	string1 = (unsigned char *)dst;
 	string2 = (unsigned char *)src;

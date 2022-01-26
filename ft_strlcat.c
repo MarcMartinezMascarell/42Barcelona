@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kitus <kitus@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marcmart <marcmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 11:44:26 by marcmart          #+#    #+#             */
-/*   Updated: 2022/01/18 15:47:44 by kitus            ###   ########.fr       */
+/*   Updated: 2022/01/24 16:27:03 by marcmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dsize++;
 		i++;
 	}
-	dst[dsize] = '\0';
+	if (dstsize >= dsize)
+		dst[dsize] = '\0';
 	if (dstsize < size_d)
 		return (size_s + dstsize);
 	else

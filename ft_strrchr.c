@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kitus <kitus@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marcmart <marcmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 12:54:21 by marcmart          #+#    #+#             */
-/*   Updated: 2022/01/18 12:55:40 by kitus            ###   ########.fr       */
+/*   Updated: 2022/01/26 16:27:20 by marcmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_strrchr(const char *s, int c)
 	tmp = -1;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 			tmp = i;
 		i++;
 	}
-	if (c == '\0')
+	if ((char)c == '\0')
 		return ((char *)&s[i]);
 	if (tmp != -1)
 		return ((char *)&s[tmp]);

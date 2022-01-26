@@ -6,7 +6,7 @@
 /*   By: marcmart <marcmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 12:26:01 by marcmart          #+#    #+#             */
-/*   Updated: 2022/01/12 12:53:35 by marcmart         ###   ########.fr       */
+/*   Updated: 2022/01/26 16:25:26 by marcmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 			return ((char *)&s[i]);
 		i++;
 	}
-	if (c != '\0')
+	if ((char)c != '\0')
 		return (NULL);
 	return ((char *)&s[i]);
 }

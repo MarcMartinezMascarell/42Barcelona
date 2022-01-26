@@ -41,11 +41,8 @@ SRCS		=	ft_atoi.c \
 				ft_putstr_fd.c \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c
-		
-SRCS_BONUS	=	
 
 OBJS		= $(SRCS:.c=.o)
-OBJS_BONUS	= $(SRCS_BONUS:.c=.o)
 
 all: 		$(NAME)
 
@@ -53,21 +50,15 @@ $(NAME):	$(OBJS) $(INCS)
 			$(LIB)	$(NAME) $(OBJS)
 			$(LIB1) $(NAME)
 
-bonus:		$(NAME) $(OBJS_BONUS)
-			$(LIB) $(NAME) $(OBJS_BONUS)
-			$(LIB1) $(NAME)
-
 .c.o: 		
 			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 clean:		
-			$(RM) $(OBJS) $(OBJS_BONUS)
+			$(RM) $(OBJS)
 
 fclean:		clean
 			$(RM) $(NAME)
 
 re:			fclean all
 
-rebonus:	fclean bonus
-
-.PHONY:		all clean fclean re bonus rebonus
+.PHONY:		all clean fclean re

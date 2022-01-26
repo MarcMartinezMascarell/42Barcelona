@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kitus <kitus@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marcmart <marcmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:12:11 by marcmart          #+#    #+#             */
-/*   Updated: 2022/01/21 15:01:18 by kitus            ###   ########.fr       */
+/*   Updated: 2022/01/26 15:55:13 by marcmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 //BASICAS
 int		ft_isalpha(int c);
