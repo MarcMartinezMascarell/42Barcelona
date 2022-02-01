@@ -6,7 +6,7 @@
 /*   By: marcmart <marcmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:37:56 by kitus             #+#    #+#             */
-/*   Updated: 2022/01/26 17:47:40 by marcmart         ###   ########.fr       */
+/*   Updated: 2022/02/01 15:18:02 by marcmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	nstart = (size_t)start;
 	strlen = ft_strlen((char *)s);
+	if (len > strlen)
+		len = strlen;
 	if (nstart >= strlen)
 		return (ft_strdup("\0"));
 	else if (strlen - nstart >= len)

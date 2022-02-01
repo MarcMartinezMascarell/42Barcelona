@@ -3,9 +3,7 @@ NAME		= libft.a
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
 LIB			= ar -rcs
-LIB1		= ranlib
 RM			= /bin/rm -f
-
 INCS		=	libft.h
 SRCS		=	ft_atoi.c \
 				ft_bzero.c \
@@ -48,7 +46,6 @@ all: 		$(NAME)
 
 $(NAME):	$(OBJS) $(INCS)
 			$(LIB)	$(NAME) $(OBJS)
-			$(LIB1) $(NAME)
 
 .c.o: 		
 			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
@@ -60,5 +57,3 @@ fclean:		clean
 			$(RM) $(NAME)
 
 re:			fclean all
-
-.PHONY:		all clean fclean re
